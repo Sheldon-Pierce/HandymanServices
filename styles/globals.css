@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5; /* Adjust the opacity to your preference */
+  /* You can add more styles to visually indicate that the button is disabled */
+}
