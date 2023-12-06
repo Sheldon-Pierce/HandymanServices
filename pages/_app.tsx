@@ -1,5 +1,6 @@
-import '@/styles/reset.css'
 import '@/styles/globals.css'
+import '@/styles/reset.css'
+
 import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from 'next/app'
 
