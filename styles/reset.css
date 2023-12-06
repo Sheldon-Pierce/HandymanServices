@@ -1,0 +1,135 @@
+/* Reset.css */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+abbr,
+address,
+code,
+img,
+small,
+strong,
+b,
+i,
+u,
+em,
+s,
+pre,
+sub,
+sup,
+mark,
+del,
+dfn,
+ins,
+var,
+cite,
+fieldset,
+form,
+legend,
+button,
+input,
+textarea,
+optgroup,
+option,
+select,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Additional resets */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Add your custom styles below this line */
+
+.css-qlig70 {
+    -webkit-padding-start: var(--chakra-space-6);
+    padding-inline-start: var(--chakra-space-6);
+    -webkit-padding-end: var(--chakra-space-6);
+    padding-inline-end: var(--chakra-space-6);
+    padding-top: 0 !important; /* Set to 0 to remove top padding */
+    padding-bottom: 0 !important; /* Set to 0 to remove bottom padding */
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
