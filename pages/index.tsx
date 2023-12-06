@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, Box, Text, useMediaQuery } from "@chakra-ui/react";
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import Footer from './footer';
 import FormModal from './formModal';
 import Head from 'next/head';
@@ -43,7 +43,7 @@ export default function Home() {
     setAlertOpen(false);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,

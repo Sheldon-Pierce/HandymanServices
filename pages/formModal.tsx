@@ -11,7 +11,7 @@ interface FormModalProps {
       address: string;
       serviceInfo: string;
     };
-    handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   }
 
 const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire, formData, handleInputChange}) => {
@@ -108,7 +108,7 @@ const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire,
     value={formData.serviceInfo}
     onChange={handleInputChange}
     className='mt-1 p-2 w-full border text-black rounded-md'
-    rows='4'
+    rows={4}
     required
   />
   <FormHelperText color="gray.500">Describe your service request</FormHelperText>
