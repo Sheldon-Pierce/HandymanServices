@@ -14,7 +14,15 @@ interface FormModalProps {
     handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   }
 
-const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire, formData, handleInputChange}) => {
+  const initialFormData = {
+    name: '',
+    number: '',
+    email: '',
+    address: '',
+    serviceInfo: '',
+  }
+
+const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire, formData = initialFormData, handleInputChange}) => {
     return (
         <Modal isOpen={isOpen} onClose={closeModal} size="lg">
             {/* <ModalOverlay /> */}
