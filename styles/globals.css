@@ -32,3 +32,7 @@ body {
   /* You can add more styles to visually indicate that the button is disabled */
 }
 
+.disable-scroll {
+  overflow: hidden;
+}
+

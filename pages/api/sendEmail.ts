@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     console.log('API route hit'); // Add this line
   if (req.method === 'POST') {
-    const { name, number, email, address, serviceInfo } = req.body;
+    const { name, number, email, address, serviceInfo, phone, emailCheck, text } = req.body;
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -25,6 +25,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         <p>Email: ${email}</p>
         <p>Address: ${address}</p>
         <p>Service Request: ${serviceInfo}</p>
+        <p>Method Of Contact<p>
+        <p>Phone: ${phone ? 'Yes' : 'No'}<p>
+        <p>Email: ${emailCheck ? 'Yes' : 'No'}<p>
+        <p>Text: ${text ? 'Yes' : 'No'}<p>
       `,
     };
 

@@ -1,4 +1,5 @@
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, FormControl, FormLabel, Input, Textarea, Flex, FormHelperText } from "@chakra-ui/react";
+import { Modal, ModalBody, Button, FormControl, FormLabel, Input, Textarea, Flex, FormHelperText, useMediaQuery, Checkbox } from "@chakra-ui/react";
+import { ChangeEvent, useState } from "react";
 
 interface FormModalProps {
     isOpen: boolean;
@@ -10,6 +11,9 @@ interface FormModalProps {
       email: string;
       address: string;
       serviceInfo: string;
+      phone: boolean;
+      emailCheck: boolean;
+      text: boolean;
     };
     handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   }
@@ -20,16 +24,22 @@ interface FormModalProps {
     email: '',
     address: '',
     serviceInfo: '',
+    phone: false,
+    emailCheck: false,
+    text: false
   }
 
 const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire, formData = initialFormData, handleInputChange}) => {
+
+  const [isMobile] = useMediaQuery("(max-width: 767px)");
+  
     return (
         <Modal isOpen={isOpen} onClose={closeModal} size="lg">
                 {/* <ModalCloseButton />  */}
         <ModalBody className="p-0">
             {isOpen && (
               <div className='fixed inset-0 p-0 flex items-center justify-center bg-black bg-opacity-75'>
-                <div className='bg-white p-8 w-full max-w-md'>
+                <div className={isMobile ? 'disable-scroll bg-white p-8 w-3/4' : "bg-white p-8 w-full max-w-md"}>
                     <h2 className='text-2xl font-semibold mb-4 text-black text-center'>Inquire About Services</h2>
       
                     <FormControl mb={4}>
@@ -102,6 +112,36 @@ const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire,
                         required
                       />
                       <FormHelperText color="gray.500">Your full address</FormHelperText>
+                    </FormControl>
+
+                    {/* Checkboxes for preferred contact methods */}
+                    <FormControl mb={4}>
+                      <FormLabel className='text-sm font-medium text-gray-700'>Preferred Contact Methods</FormLabel>
+                      <Checkbox
+                        isChecked={formData.phone}
+                        onChange={(e) => handleInputChange(e)}
+                        name="phone"
+                        className='mt-1 pr-4'
+                      >
+                        Phone
+                      </Checkbox>
+                      <Checkbox
+                        isChecked={formData.emailCheck}
+                        onChange={(e) => handleInputChange(e)}
+                        name="emailCheck"
+                        className='mt-1 px-4'
+                      >
+                        Email
+                      </Checkbox>
+                      <Checkbox
+                        isChecked={formData.text}
+                        onChange={(e) => handleInputChange(e)}
+                        name="text"
+                        className='mt-1 px-4'
+                      >
+                        Text
+                      </Checkbox>
+
                     </FormControl>
 
                     <FormControl mb={4}>
