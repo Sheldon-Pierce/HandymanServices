@@ -63,10 +63,10 @@ export default function Home() {
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type } = e.target;
   
     // Use the checked property for checkboxes
-    const inputValue = type === 'checkbox' ? checked : value;
+    const inputValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
   
     setFormData((prevData) => {
       const updatedData = {
