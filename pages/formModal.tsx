@@ -39,7 +39,7 @@ const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire,
         <ModalBody className="p-0">
             {isOpen && (
               <div className='fixed inset-0 p-0 flex items-center justify-center bg-black bg-opacity-75'>
-                <div className={isMobile ? 'disable-scroll bg-white p-8 w-3/4' : "bg-white p-8 w-full max-w-md h-3/4"}>
+                <div className={isMobile ? 'disable-scroll bg-white p-8 w-3/4' : "bg-white p-8 w-full max-w-md"}>
                     <h2 className='text-2xl font-semibold mb-4 text-black text-center'>Inquire About Services</h2>
       
                     <FormControl mb={4}>
