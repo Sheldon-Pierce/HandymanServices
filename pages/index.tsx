@@ -1,10 +1,11 @@
 import Image from 'next/image'
-import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, Box, Text, useMediaQuery } from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, Box, Text, useMediaQuery, Icon, Link } from "@chakra-ui/react";
 import { ChangeEvent, useEffect, useState } from 'react';
 import Footer from './footer';
 import FormModal from './formModal';
 import Head from 'next/head';
 import AlertModal from './alertModal';
+import { SocialIcon, social_icons } from 'react-social-icons';
 
 interface FormData {
   name: string;
@@ -141,7 +142,8 @@ export default function Home() {
             M.A. Handyman Services is your trusted local partner for all your home repair and improvement needs in Kirkland, WA. I am dedicated to delivering high-quality craftsmanship and excellent customer service. Whether it's fixing a leaky faucet or painting a room, I am here to help make your home the best it can be.
           </Text>
           <Text fontSize={isMobile ? "xl" : "2xl"} py={4} pt={12}>Please submit your request to inquire about services!</Text>
-          <Button onClick={openModal} className='bg-black text-white rounded p-2 px-8 m-2 hover:bg-white hover:text-black transition duration-500 ease-in-out'>Inquire</Button>
+          <SocialIcon target="_blank" url='https://facebook.com' href='https://facebook.com/Handyman.Aguilar' className={isMobile ? 'mr-4' : 'mb-4'}/>
+          <Button onClick={openModal} className='bg-black text-white rounded p-4 px-8 m-2 hover:bg-white hover:text-black transition duration-500 ease-in-out'>Inquire</Button>
         </Box>
       </div>
       <Footer />
