@@ -39,7 +39,7 @@ const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire,
         <ModalBody className="p-0">
             {isOpen && (
               <div className='fixed inset-0 p-0 flex items-center justify-center bg-black bg-opacity-75'>
-                <div className={isMobile ? 'disable-scroll bg-white p-8 w-3/4' : "bg-white p-8 w-full max-w-md"}>
+                <div className={isMobile ? 'disable-scroll bg-white p-8 w-3/4' : "bg-white p-8 w-full max-w-md h-3/4"}>
                     <h2 className='text-2xl font-semibold mb-4 text-black text-center'>Inquire About Services</h2>
       
                     <FormControl mb={4}>
@@ -121,7 +121,7 @@ const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire,
                         isChecked={formData.phone}
                         onChange={(e) => handleInputChange(e)}
                         name="phone"
-                        className='mt-1 pr-4'
+                        className={isMobile ? 'mt-1 pr-2' : 'mt-1 pr-4'}
                       >
                         Phone
                       </Checkbox>
@@ -129,7 +129,7 @@ const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire,
                         isChecked={formData.emailCheck}
                         onChange={(e) => handleInputChange(e)}
                         name="emailCheck"
-                        className='mt-1 px-4'
+                        className={isMobile ? 'mt-1 pr-2' : 'mt-1 pr-4'}
                       >
                         Email
                       </Checkbox>
@@ -137,7 +137,7 @@ const FormModal: React.FC<FormModalProps> = ({isOpen, closeModal, handleInquire,
                         isChecked={formData.text}
                         onChange={(e) => handleInputChange(e)}
                         name="text"
-                        className='mt-1 px-4'
+                        className={isMobile ? 'mt-1 pr-2' : 'mt-1 pr-4'}
                       >
                         Text
                       </Checkbox>
