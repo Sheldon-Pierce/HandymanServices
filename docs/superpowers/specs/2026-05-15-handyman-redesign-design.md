@@ -102,8 +102,8 @@ Wraps page content with `<Nav>` and `<Footer>`. Sets `min-h-screen bg-cream font
 ### `Contact.tsx`
 - Ink background, cream text. Two columns on desktop; stacked on mobile.
 - Left: eyebrow "Get a quote" (amber); headline "Let's talk about your project." (Fraunces); supporting paragraph; contact details list:
-  - Phone: `TODO` placeholder
-  - Email: `TODO` placeholder
+  - Phone: `(425) 555-0123` (placeholder — Kirkland area code, reserved-for-fiction range)
+  - Email: `contact@mahandyman.com` (placeholder)
   - Location: "Kirkland, WA & nearby"
   - Facebook icon link (existing `react-social-icons` URL).
 - Right: dark card containing the **inline form**. Same fields as the current modal: name, phone number, email, address, project description, three contact-method checkboxes (phone / email / text). Same `POST /api/sendEmail` call. Same success/error feedback — but render inline beneath the form (a small status banner), not as a Chakra modal.
@@ -168,10 +168,11 @@ Validation: required fields are `name`, `email` (basic regex), and `serviceInfo`
 - `pages/api/hello.ts`
 - `public/main.jpeg`, `public/favicon.ico`
 
-## Open Items for the User to Fill In
+## Placeholder Values (Safe to Swap Later)
 
-- Phone number and email address shown in the Contact section (currently TODO placeholders).
-- The "8 years" stat in About is set; confirm if you want any tweak to the rest of that paragraph.
+- Phone in Contact: `(425) 555-0123` — uses the Kirkland area code and the reserved-for-fiction `555-01xx` range, so it won't ring any real person.
+- Email in Contact: `contact@mahandyman.com` — plausible but no real mailbox.
+- The "8 years" stat in About is set per user direction.
 
 ## Out of Scope
 
